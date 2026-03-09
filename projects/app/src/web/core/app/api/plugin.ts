@@ -61,6 +61,8 @@ export const getTeamPlugTemplates = (data?: ListAppBody) =>
 export const getSystemPlugTemplates = (data: GetSystemPluginTemplatesBody) =>
   POST<NodeTemplateListItemType[]>('/core/app/plugin/getSystemPluginTemplates', data);
 
+export const postRefreshSystemPlugins = () => POST('/core/app/plugin/refreshSystemPlugins', {});
+
 export const getPluginGroups = () => {
   return useSystemStore.getState()?.feConfigs?.isPlus
     ? GET<PluginGroupSchemaType[]>('/proApi/core/app/plugin/getPluginGroups')

@@ -371,7 +371,7 @@ function getCachedSystemPlugins() {
   return global.systemPlugins_cache;
 }
 
-const cleanSystemPluginCache = () => {
+export const cleanSystemPluginCache = () => {
   global.systemPlugins_cache = undefined;
 };
 
