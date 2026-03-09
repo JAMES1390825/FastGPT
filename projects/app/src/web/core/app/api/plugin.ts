@@ -61,6 +61,9 @@ export const getTeamPlugTemplates = (data?: ListAppBody) =>
 export const getSystemPlugTemplates = (data: GetSystemPluginTemplatesBody) =>
   POST<NodeTemplateListItemType[]>('/core/app/plugin/getSystemPluginTemplates', data);
 
+// 手动触发系统插件热更新（清除缓存），需要 Root Key 权限
+export const postRefreshSystemPlugins = () => POST('/core/app/plugin/refreshSystemPlugins', {});
+
 export const getPluginGroups = () => {
   return useSystemStore.getState()?.feConfigs?.isPlus
     ? GET<PluginGroupSchemaType[]>('/proApi/core/app/plugin/getPluginGroups')

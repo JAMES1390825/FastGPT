@@ -371,7 +371,8 @@ function getCachedSystemPlugins() {
   return global.systemPlugins_cache;
 }
 
-const cleanSystemPluginCache = () => {
+// 清除系统插件缓存，下次请求时将重新从插件服务器和数据库加载最新插件列表
+export const cleanSystemPluginCache = () => {
   global.systemPlugins_cache = undefined;
 };
 
